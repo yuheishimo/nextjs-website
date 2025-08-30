@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './index.module.css';
 import Category from '../Category';
 import Date from '../Date';
@@ -26,6 +27,7 @@ export default function NewsList({ news }: Props) {
     <ul>
       {news.map((article) => (
         <li key={article.id} className={styles.list}>
+          <Link href={'/news/{article.id}'} className={styles.link}></Link>
           <div className={styles.link}>
             <Image
               className={styles.image}
